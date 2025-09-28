@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #333;
+}
+
+nav, footer {
+  background: #ffcc00; /* żółty */
+  color: #c00;         /* czerwony */
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  max-width: 400px;
+  width: 100%;
+  border: 2px solid #c00; /* czerwony */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff8e1; /* delikatny żółty odcień */
+}
+
+h1 {
+  text-align: center;
+  color: #c00; /* czerwony */
+}
+
+input, select, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid #c00;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  background: #c00;  /* czerwony */
+  color: #ffcc00;    /* żółty */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #900;  /* ciemniejszy czerwony */
+  color: #fff200;    /* intensywniejszy żółty */
+}
+
+.error {
+  color: #c00;
+  text-align: center;
+  font-weight: bold;
+}
+
+.ticket {
+  margin-top: 15px;
+  padding: 15px;
+  border: 2px solid #c00;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  color: #c00;
+  background: #fff3cd; /* jasny żółty */
+}
+
+.hidden {
+  display: none;
+}
