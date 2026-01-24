@@ -1,35 +1,214 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bilety Kubenburg</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPK Kraków RBLX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 14px 0;
+    }
+    nav a {
+      font-weight: 600;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      transition: width 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* BANNER */
+    .banner {
+      height: 420px;
+      background: linear-gradient(120deg, #0ea5e9, #1e3a8a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1.2s ease;
+    }
+    .banner h1 {
+      font-size: 46px;
+      font-weight: 800;
+    }
+
+    /* SEKCJE */
+    section {
+      padding: 80px 10%;
+      animation: fadeUp 1s ease;
+    }
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* KAFELKI */
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    .grid-3x3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .card {
+      background: #020617;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+    .card-img {
+      height: 200px;
+      background: #1e293b;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .card-content p {
+      font-size: 14px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    /* ANIMACJE */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+      .grid-2x2 { grid-template-columns: 1fr; }
+      .grid-3x3 { grid-template-columns: 1fr; }
+      .banner h1 { font-size: 34px; }
+    }
+  </style>
 </head>
 <body>
+
+<header>
+  <div class="topbar">
+    <div class="logo">MPK Kraków RBLX</div>
+  </div>
   <nav>
-    System Biletów Kubenburg 🚍
+    <a href="#galeria">Galeria</a>
+    <a href="#tabor">Tabor</a>
+    <a href="#discord">Discord</a>
+    <a href="#rekrutacje">Rekrutacje</a>
   </nav>
+</header>
 
-  <main>
-    <div class="card">
-      <h1>Kup bilet</h1>
-      <input id="nickname" type="text" placeholder="Twój nick">
-      <select id="line">
-        <option value="1">Linia 1</option>
-        <option value="2">Linia 2</option>
-        <option value="3">Linia 3</option>
-      </select>
-      <button onclick="buyTicket()">Kup bilet</button>
-      <p id="error" class="error"></p>
-      <div id="ticket" class="ticket hidden"></div>
-    </div>
-  </main>
+<div class="banner">
+  <h1>Tutaj wstawisz swój baner</h1>
+</div>
 
-  <footer>
-    © 2025 Kubenburg Transport
-  </footer>
+<section id="tabor">
+  <h2>Tabor</h2>
+  <div class="grid-2x2">
+    <a class="card">
+      <div class="card-img"></div>
+      <div class="card-content">
+        <h3>Tramwaje</h3>
+        <p>Nowoczesne i klasyczne tramwaje MPK Kraków dostępne na serwerze.</p>
+      </div>
+    </a>
+    <a class="card">
+      <div class="card-img"></div>
+      <div class="card-content">
+        <h3>Autobusy</h3>
+        <p>Autobusy miejskie oraz podmiejskie w realistycznym wydaniu.</p>
+      </div>
+    </a>
+    <a class="card">
+      <div class="card-img"></div>
+      <div class="card-content">
+        <h3>Pojazdy historyczne</h3>
+        <p>Legendarny tabor MPK z dawnych lat.</p>
+      </div>
+    </a>
+    <a class="card">
+      <div class="card-img"></div>
+      <div class="card-content">
+        <h3>Coming Soon</h3>
+        <p>Nowe pojazdy w przygotowaniu.</p>
+      </div>
+    </a>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section id="galeria">
+  <h2>Galeria</h2>
+  <div class="grid-3x3">
+    <div class="card"><div class="card-img"></div></div>
+    <div class="card"><div class="card-img"></div></div>
+    <div class="card"><div class="card-img"></div></div>
+  </div>
+</section>
+
+<section id="discord">
+  <h2>Serwer Discord</h2>
+  <p style="text-align:center;">Tutaj wstawisz widget lub link do serwera Discord.</p>
+</section>
+
+<section id="rekrutacje">
+  <h2>Rekrutacje</h2>
+  <p style="text-align:center;">Tutaj w przyszłości dodasz formularze rekrutacyjne.</p>
+</section>
+
 </body>
 </html>
