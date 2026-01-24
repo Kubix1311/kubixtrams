@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MPK Kraków RBLX</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -13,6 +14,10 @@
       color: #e5e7eb;
     }
     a { text-decoration: none; color: inherit; }
+
+    img {
+      display: block;
+    }
 
     /* HEADER */
     header {
@@ -64,10 +69,16 @@
       align-items: center;
       justify-content: center;
       animation: fadeIn 1.2s ease;
+      overflow: hidden;
     }
     .banner h1 {
-      font-size: 46px;
-      font-weight: 800;
+      width: 100%;
+      height: 100%;
+    }
+    .banner h1 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* SEKCJE */
@@ -104,10 +115,18 @@
       transform: translateY(-10px) scale(1.02);
       box-shadow: 0 30px 60px rgba(0,0,0,0.6);
     }
+
     .card-img {
       height: 200px;
       background: #1e293b;
+      overflow: hidden;
     }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .card-content {
       padding: 20px;
     }
@@ -119,6 +138,19 @@
       font-size: 14px;
       opacity: 0.85;
       line-height: 1.5;
+    }
+
+    /* GALERIA */
+    #galeria .card {
+      height: 220px;
+    }
+    #galeria .card-img {
+      height: 100%;
+    }
+    #galeria .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* ANIMACJE */
@@ -135,10 +167,11 @@
     @media(max-width: 900px) {
       .grid-2x2 { grid-template-columns: 1fr; }
       .grid-3x3 { grid-template-columns: 1fr; }
-      .banner h1 { font-size: 34px; }
+      .banner { height: 300px; }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -154,7 +187,7 @@
 </header>
 
 <div class="banner">
-  <h1> <img src="mpk.png"></h1>
+  <h1><img src="mpk.png"></h1>
 </div>
 
 <section id="tabor">
@@ -162,7 +195,7 @@
   <div class="grid-2x2">
 
     <a class="card" href="tramwaje.html">
-      <div class="card-img"> <img src="konstal105na.PNG"> </div>
+      <div class="card-img"><img src="konstal105na.PNG"></div>
       <div class="card-content">
         <h3>Tramwaje</h3>
         <p>Ciekawe tramwaje MPK Kraków.</p>
@@ -170,7 +203,7 @@
     </a>
 
     <a class="card" href="autobusy.html">
-      <div class="card-img"> <img src="mercedes.PNG"></div>
+      <div class="card-img"><img src="mercedes.PNG"></div>
       <div class="card-content">
         <h3>Autobusy</h3>
         <p>Autobusy miejskie oraz podmiejskie.</p>
@@ -178,10 +211,10 @@
     </a>
 
     <a class="card" href="historyczne.html">
-      <div class="card-img"> <img src="102na.PNG"> </div>
+      <div class="card-img"><img src="102na.PNG"></div>
       <div class="card-content">
         <h3>Pojazdy historyczne</h3>
-        <p>Tabor MPK z dawnych lat, który pamięta Maryla Rodowicz .</p>
+        <p>Tabor MPK z dawnych lat, który pamięta Maryla Rodowicz.</p>
       </div>
     </a>
 
@@ -196,105 +229,21 @@
   </div>
 </section>
 
-
 <section id="galeria">
   <h2>Galeria</h2>
   <div class="grid-3x3">
-    <div class="card"><div class="card-img"> <img src="konstal105na.PNG"></div></div>
-    <div class="card"><div class="card-img"><ing src="102na.PNG"></ing></div></div>
-    <div class="card"><div class="card-img"><ing src="mercedes.PNG"></div></div>
+    <div class="card"><div class="card-img"><img src="konstal105na.PNG"></div></div>
+    <div class="card"><div class="card-img"><img src="102na.PNG"></div></div>
+    <div class="card"><div class="card-img"><img src="mercedes.PNG"></div></div>
   </div>
 </section>
 
-<section id="discord" style="animation: fadeUp 1s ease;">
+<section id="discord">
   <h2>Serwer Discord</h2>
+</section>
 
-  <div style="
-    max-width: 600px;
-    margin: 0 auto;
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    transition: transform 0.4s, box-shadow 0.4s;
-  " 
-  onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,0,0,0.6)';"
-  onmouseout="this.style.transform='none'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.4)';">
-
-    <h3 style="font-size: 24px; margin-bottom: 15px;">Dołącz do naszego Discorda</h3>
-    <p style="opacity: 0.85; margin-bottom: 20px;">
-      Kliknij poniżej, aby przejść na serwer społeczności MPK Kraków RBLX.
-    </p>
-
-    <a href="https://discord.gg/PYQrfqyw" 
-       style="
-         display: inline-block;
-         padding: 14px 28px;
-         background: #38bdf8;
-         color: #0f172a;
-         font-weight: 700;
-         border-radius: 12px;
-         transition: background 0.3s, transform 0.3s;
-       "
-       onmouseover="this.style.background='#7dd3fc'; this.style.transform='scale(1.05)';"
-       onmouseout="this.style.background='#38bdf8'; this.style.transform='none';">
-      Wejdź na Discord
-    </a>
-
-  </div>
-<section id="rekrutacje" style="animation: fadeUp 1s ease;">
+<section id="rekrutacje">
   <h2>Rekrutacje</h2>
-
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  ">
-
-    <!-- ADMIN -->
-    <a href="https://forms.office.com/r/snKuc0PtcQ" style="
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      transition: transform 0.4s, box-shadow 0.4s;
-      text-decoration: none;
-      color: inherit;
-    "
-    onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,0,0,0.6)';"
-    onmouseout="this.style.transform='none'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.4)';">
-
-      <h3 style="font-size: 24px; margin-bottom: 10px;">Rekrutacja — Administrator</h3>
-      <p style="opacity: 0.85;">
-        Dołącz do zespołu administracji i pomóż w moderowaniu gry oraz discorda (brak wynagrodzenia, nie jest to praca).
-      </p>
-    </a>
-
-    <!-- TESTER GRY -->
-    <a href="niedostepne.html" style="
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      transition: transform 0.4s, box-shadow 0.4s;
-      text-decoration: none;
-      color: inherit;
-    "
-    onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,0,0,0.6)';"
-    onmouseout="this.style.transform='none'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.4)';">
-
-    <h3 style="font-size: 24px; margin-bottom: 10px;">Rekrutacja — Tester gry | NIEDOSTĘPNE (NA RAZIE)</h3>
-      <p style="opacity: 0.85;">
-        Pomóż testować nowe funkcje i pojazdy przed publikacją.
-      </p>
-    </a>
-
-  </div>
 </section>
 
 </body>
